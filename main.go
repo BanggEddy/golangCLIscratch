@@ -72,6 +72,21 @@ func main() {
 			} else {
 				fmt.Println("Contact non trouvé")
 			}
+		case 4:
+			fmt.Print("ID à modifier: ")
+			var id int
+			fmt.Scan(&id)
+
+			if contact, ok := contacts[id]; ok {
+				fmt.Print("Nouveau nom: ")
+				fmt.Scan(&contact.Nom)
+				fmt.Print("Nouvel email: ")
+				fmt.Scan(&contact.Email)
+				contacts[id] = contact
+				fmt.Println("Contact msj")
+			} else {
+				fmt.Println("Contact not found")
+			}
 		case 5:
 			fmt.Println("Au revoir!")
 			os.Exit(0)
