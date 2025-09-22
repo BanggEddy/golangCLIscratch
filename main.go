@@ -51,9 +51,31 @@ func main() {
 			contacts[prochainID] = contact
 			fmt.Printf("Contact ajouté avec ID: %d\n", prochainID)
 			prochainID++
+		case 2:
+			if len(contacts) == 0 {
+				fmt.Println("Aucun contact")
+			} else {
+				fmt.Println("\n--- Contacts ---")
+				for _, contact := range contacts {
+					fmt.Printf("id : %d | %s | %s\n", contact.ID, contact.Nom, contact.Email)
+				}
+			}
+		case 3:
+			fmt.Print("ID à supprimer: ")
+			var id int
+			fmt.Scan(&id)
+			val, ok := contacts[id]
+
+			if ok {
+				delete(contacts, id)
+				fmt.Println("Contact deleted:", val)
+			} else {
+				fmt.Println("Contact non trouvé")
+			}
 		case 5:
 			fmt.Println("Au revoir!")
 			os.Exit(0)
+
 		default:
 			fmt.Println("Choix invalide")
 		}
