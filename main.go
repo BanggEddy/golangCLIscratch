@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 )
 
 type Contact struct {
@@ -38,5 +39,23 @@ func main() {
 		var choix int
 		fmt.Scan(&choix)
 
+		switch choix {
+		case 1:
+			var nom, email string
+			fmt.Print("Nom: ")
+			fmt.Scan(&nom)
+			fmt.Print("Email: ")
+			fmt.Scan(&email)
+
+			contact := Contact{ID: prochainID, Nom: nom, Email: email}
+			contacts[prochainID] = contact
+			fmt.Printf("Contact ajouté avec ID: %d\n", prochainID)
+			prochainID++
+		case 5:
+			fmt.Println("Au revoir!")
+			os.Exit(0)
+		default:
+			fmt.Println("Choix invalide")
+		}
 	}
 }
