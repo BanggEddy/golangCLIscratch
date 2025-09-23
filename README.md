@@ -28,17 +28,12 @@ git clone https://github.com/BanggEddy/golangCLIscratch.git
 cd golangCLIscratch
 ```
 
-2. Compilez le projet :
-```bash
-go build -o mini-crm
-```
-
-3. Lancez le programme dans le dossier du projet :
+2. Lancez le programme dans le dossier du projet :
 ```bash
 go run .
 ```
 
-4. Utilisation rapide avec flags
+3. Utilisation rapide avec flags
 ```bash
 go run . --nom="Alice" --email="alice@example.com"
 ```
