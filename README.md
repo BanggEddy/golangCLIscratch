@@ -35,7 +35,7 @@ go build -o mini-crm
 
 3. Lancez le programme dans le dossier du projet :
 ```bash
-go run . --nom="Alice" --email="alice@example.com"
+go run .
 ```
 
 4. Utilisation rapide avec flags
