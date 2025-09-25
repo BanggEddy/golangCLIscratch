@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/BanggEddy/golangCLIscratch/database"
+	"github.com/BanggEddy/golangCLIscratch/handlers"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
@@ -54,6 +55,15 @@ func main() {
 			"message": "test",
 		})
 	})
+
+	// groupe de routes api
+	api := router.Group("/api/v1")
+	{
+		contacts := api.Group("/contacts")
+		{
+			contacts.POST("/", handlers.CreateContact)     
+		}
+	}
 
 	// Démarre serveur
 	port := fmt.Sprintf(":%d", viper.GetInt("server.port"))
