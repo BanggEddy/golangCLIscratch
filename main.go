@@ -62,6 +62,10 @@ func main() {
 		contacts := api.Group("/contacts")
 		{
 			contacts.POST("/", handlers.CreateContact)     
+			contacts.GET("/", handlers.GetAllContacts)     
+			contacts.GET("/:id", handlers.GetContactByID)   
+			contacts.PUT("/:id", handlers.UpdateContact)    
+			contacts.DELETE("/:id", handlers.DeleteContact) 
 		}
 	}
 
