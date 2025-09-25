@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+database:
+  name: contacts.db
+  dsn: "./contacts.db"
+
+app:
+  environment: development
