@@ -7,3 +7,7 @@ database:
 
 app:
   environment: development
+
+storage:
+  type: "gorm"
+  dsn: "./contacts.db"
